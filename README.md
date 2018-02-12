@@ -61,6 +61,7 @@ module.exports = function(file, api) {
 Variables are specified as single uppercase letters, such as `A`, `B`, `C`, etc
 
 To save and run your codemod, use [jscodeshift](https://github.com/facebook/jscodeshift):
+
 ```
 gen-codemod INITIAL.js DESIRED.js > my-transform.js
 npx jscodeshift -t my-transform.js PATH_TO_TRANSFORM

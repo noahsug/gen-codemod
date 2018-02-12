@@ -1,10 +1,8 @@
 const j = require('jscodeshift')
 
 function getRootNode(src) {
-  const collection = j(src)
-    .find(j.ExpressionStatement)
-    .get()
-  return collection.value.expression
+  const firstBlock = j(src).get().value.program.body[0]
+  return firstBlock.expression || firstBlock
 }
 
 module.exports = getRootNode

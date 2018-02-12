@@ -32,12 +32,12 @@ module.exports = function(file, api) {
             j.identifier('stub'),
             false
           ),
-          [j.identifier('A'), j.identifier('B')]
+          [getANode(path), getBNode(path)]
         ),
         j.identifier('andCallsFake'),
         false
       ),
-      [j.identifier('C')]
+      [getCNode(path)]
     );
   }
 

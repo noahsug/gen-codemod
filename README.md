@@ -1,2 +1,2 @@
 # gen-codemod
-Generate codemods by specifying your starting -> desired JavaScript.
+> Generate codemods via starting / desired JavaScript.

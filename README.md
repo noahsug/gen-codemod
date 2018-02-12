@@ -1,9 +1,6 @@
 # gen-codemod
 > Generate codemods via initial -> desired JavaScript.
 
-### Install
-`npm i -g gen-codemod`
-
 ### Usage
 ```sh
 echo "sinon.stub(A, B, C)" > initial.js
@@ -68,3 +65,6 @@ To save and run your codemod, use [jscodeshift](https://github.com/facebook/jsco
 gen-codemod INITIAL.js DESIRED.js > my-transform.js
 npx jscodeshift -t my-transform.js PATH_TO_TRANSFORM
 ```
+
+### Install
+`npm i -g gen-codemod`

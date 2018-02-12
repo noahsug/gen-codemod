@@ -1,5 +1,5 @@
 # gen-codemod
-> Generate codemods via initial / desired JavaScript.
+> Generate codemods via initial -> desired JavaScript.
 
 ### Install
 `npm i -g gen-codemod`

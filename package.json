@@ -1,7 +1,7 @@
 {
   "name": "gen-codemod",
   "version": "1.0.1",
-  "description": "Generate codemods based on an starting / desired JavaScript",
+  "description": "Generate codemods via initial -> desired JavaScript.",
   "main": "index.js",
   "bin": {
     "gen-codemod": "index.js"
@@ -14,15 +14,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:noahsug/codemod-explorer.git"
+    "url": "git@github.com:noahsug/gen-codemod.git"
   },
   "keywords": [],
   "author": "Noah Sugarman <noahsug@gmail.com.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/noahsug/codemod-explorer/issues"
+    "url": "https://github.com/noahsug/gen-codemod/issues"
   },
-  "homepage": "https://github.com/noahsug/codemod-explorer#readme",
+  "homepage": "https://github.com/noahsug/gen-codemod#readme",
   "dependencies": {
     "jscodeshift": "^0.4.0",
     "ast-types": "^0.10.2",

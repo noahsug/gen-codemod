@@ -1,6 +1,6 @@
 {
   "name": "gen-codemod",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Generate codemods via initial -> desired JavaScript.",
   "main": "index.js",
   "bin": {

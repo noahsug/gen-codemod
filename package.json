@@ -18,8 +18,10 @@
   },
   "keywords": [
     "codemod",
+    "refactor",
     "generate",
     "jscodeshift",
+    "ast",
     "JavaScript"
   ],
   "author": "Noah Sugarman <noahsug@gmail.com.com>",

@@ -1,5 +1,5 @@
 # gen-codemod
-> Generate codemods by comparing two JavaScript files.
+> Generate codemod by comparing two JavaScript files.
 
 ### Usage
 `gen-codemod INITIAL.js DESIRED.js > my-transform.js`
@@ -19,7 +19,7 @@ echo "sinon.stub(A, B, C)" > sinon-v1.js
 echo "sinon.stub(A, B).andCallFake(C)" > sinon-v2.js
 gen-codemod sinon-v1.js sinon-v2.js
 ```
-**Note:** Single uppercase letters, such as `A`, `B`, `C`, etc, are used as variables and match anything.
+**Note:** Single uppercase letters, such as `A`, `B`, `C`, etc, are used as variables and match any AST node.
 
 This outputs:
 ```js

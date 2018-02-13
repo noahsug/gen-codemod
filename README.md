@@ -83,4 +83,4 @@ npx jscodeshift -t my-transform.js PATH_TO_TRANSFORM
 `npm i -g gen-codemod`
 
 ### Limitations
-* Can't change multiple AST expressions at once (only reads the first AST node from the initial / desired JavaScript files).
+Can't change multiple AST expressions at once (only reads the first AST node from the initial / desired JavaScript files).

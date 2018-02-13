@@ -1,13 +1,27 @@
 # gen-codemod
-> Generate codemods via initial -> desired JavaScript.
+> Generate codemods by comparing your initial JavaScript to your desired JavaScript.
 
 ### Usage
+`gen-codemod INITIAL.js DESIRED.js > my-transform.js`
+
+`INITIAL.js` is a JavaScript file containing the initial, pre-codemod JavaScript that you'd like to change.
+
+`DESIRED.js` is a JavaScript file containing the desired, post-codemod JavaScript that you'd like to have.
+
+`gen-codemod` compares these two files and creates a codemod to get from `INITIAL.js` to `DESIRED.js`.
+
+### Example
+
+When upgrading from sinon.js v1 -> v2, every instance of `sinon.stub(obj, method, fn)` is changed to `sinon.stub(obj, method).andCallsFake(fn)`. We can generate this codemod as follows:
+
 ```sh
-echo "sinon.stub(A, B, C)" > initial.js
-echo "sinon.stub(A, B).andCallFake(C)" > desired.js
-gen-codemod initial.js desired.js
+echo "sinon.stub(A, B, C)" > sinon-v1.js
+echo "sinon.stub(A, B).andCallFake(C)" > sinon-v2.js
+gen-codemod sinon-v1.js sinon-v2.js
 ```
-outputs:
+**Note:** Single uppercase letters, such as `A`, `B`, `C`, etc, are used as variables and match anything.
+
+This outputs:
 ```js
 module.exports = function(file, api) {
   const j = api.jscodeshift;
@@ -58,14 +72,15 @@ module.exports = function(file, api) {
 };
 ```
 
-Variables are specified as single uppercase letters, such as `A`, `B`, `C`, etc.
-
-To save and run your codemod, use [jscodeshift](https://github.com/facebook/jscodeshift):
+To run your codemod, use [jscodeshift](https://github.com/facebook/jscodeshift):
 
 ```sh
-gen-codemod INITIAL.js DESIRED.js > my-transform.js
+gen-codemod sinon-v1.js sinon-v2.js > my-transform.js
 npx jscodeshift -t my-transform.js PATH_TO_TRANSFORM
 ```
 
 ### Install
 `npm i -g gen-codemod`
+
+### Limitations
+* Can't change multiple AST expressions at once (only reads the first AST node from the initial / desired JavaScript files).

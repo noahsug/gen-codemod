@@ -1,7 +1,7 @@
 {
   "name": "gen-codemod",
   "version": "1.0.8",
-  "description": "Generate codemods via initial -> desired JavaScript.",
+  "description": "Generate codemods by comparing two JavaScript files",
   "main": "index.js",
   "bin": {
     "gen-codemod": "index.js"
@@ -16,7 +16,12 @@
     "type": "git",
     "url": "git@github.com:noahsug/gen-codemod.git"
   },
-  "keywords": [],
+  "keywords": [
+    "codemod",
+    "generate",
+    "jscodeshift",
+    "JavaScript"
+  ],
   "author": "Noah Sugarman <noahsug@gmail.com.com>",
   "license": "MIT",
   "bugs": {

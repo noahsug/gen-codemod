@@ -1,18 +1,18 @@
 # gen-codemod
-> Generate codemods by comparing your initial JavaScript to your desired JavaScript.
+> Generate codemods by comparing two JavaScript files.
 
 ### Usage
 `gen-codemod INITIAL.js DESIRED.js > my-transform.js`
 
-`INITIAL.js` is a JavaScript file containing the initial, pre-codemod JavaScript that you'd like to change.
+`INITIAL.js` is the initial, pre-codemod JavaScript you'd like to change.
 
-`DESIRED.js` is a JavaScript file containing the desired, post-codemod JavaScript that you'd like to have.
+`DESIRED.js` is the desired, post-codemod JavaScript you'd like to have.
 
 `gen-codemod` compares these two files and creates a codemod to get from `INITIAL.js` to `DESIRED.js`.
 
 ### Example
 
-When upgrading from sinon.js v1 -> v2, every instance of `sinon.stub(obj, method, fn)` is changed to `sinon.stub(obj, method).andCallsFake(fn)`. We can generate this codemod as follows:
+When upgrading from sinon.js v1 -> v2, every instance of `sinon.stub(obj, method, fn)` needs to be changed to `sinon.stub(obj, method).andCallsFake(fn)`. We can generate this codemod as follows:
 
 ```sh
 echo "sinon.stub(A, B, C)" > sinon-v1.js
@@ -76,7 +76,7 @@ To run your codemod, use [jscodeshift](https://github.com/facebook/jscodeshift):
 
 ```sh
 gen-codemod sinon-v1.js sinon-v2.js > my-transform.js
-npx jscodeshift -t my-transform.js PATH_TO_TRANSFORM
+npx jscodeshift -t my-transform.js PROJECT_PATH
 ```
 
 ### Install

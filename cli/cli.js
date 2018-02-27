@@ -1,5 +1,5 @@
 const config = require('./config')
-const generateCodemod = require('./generateCodemod')
+const generateCodemod = require('../api')
 
 if (config.inputSrc && config.outputSrc) {
   console.log(generateCodemod(config))

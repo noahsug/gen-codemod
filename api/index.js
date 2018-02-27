@@ -1,4 +1,3 @@
-const config = require('./config')
 const getRootNode = require('./getRootNode')
 const getVariableGetterMap = require('./getVariableGetterMap')
 const getProperties = require('./getProperties')

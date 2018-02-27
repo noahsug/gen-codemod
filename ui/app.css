@@ -1,0 +1,30 @@
+body, html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+.title {
+  font-family: monospace;
+  height: 32px;
+  line-height: 32px;
+  border-bottom: 1px solid #ddd;
+  color: #454545;
+  padding-left: 10px;
+  font-size: 18px;
+}
+
+.code-container {
+  display: flex;
+  height: 100%;
+}
+
+textarea {
+  flex: 1;
+}
+
+textarea[readonly] {
+  background-color: #efefef;
+}

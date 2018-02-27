@@ -2,11 +2,14 @@
   "name": "gen-codemod",
   "version": "1.0.10",
   "description": "Generate codemods by comparing two JavaScript files",
-  "main": "index.js",
+  "main": "cli/index.js",
   "bin": {
-    "gen-codemod": "index.js"
+    "gen-codemod": "cli/index.js"
   },
   "scripts": {
+    "clean": "shx rm -f bundle.js",
+    "build": "npm run clean && NODE_ENV=production webpack -p --progress",
+    "start": "webpack-dev-server --content-base=./ui",
     "patch": "VERSION=patch npm run publish:version",
     "minor": "VERSION=minor npm run publish:version",
     "major": "VERSION=major npm run publish:version",
@@ -35,5 +38,17 @@
     "ast-types": "^0.10.2",
     "prettier": "^1.10.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-remove-strict-mode": "0.0.2",
+    "babel-preset-airbnb": "^2.4.0",
+    "codemirror": "^5.35.0",
+    "css-loader": "^0.28.9",
+    "debounce": "^1.1.0",
+    "gh-pages-deploy": "^0.4.2",
+    "shx": "^0.2.2",
+    "style-loader": "^0.20.2",
+    "webpack": "^3.11.0",
+    "webpack-dev-server": "^2.11.1"
+  }
 }

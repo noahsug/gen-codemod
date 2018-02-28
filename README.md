@@ -1,6 +1,8 @@
 # gen-codemod
 > Generate codemod by comparing two JavaScript files.
 
+Demo: [Codemod Explorer](https://noahsug.github.io/gen-codemod/)
+
 ### Usage
 `gen-codemod INITIAL.js DESIRED.js > my-transform.js`
 

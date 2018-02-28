@@ -40,10 +40,15 @@ function isVariable(node) {
   return node && node.name && node.name.match(/^[A-Z]$/)
 }
 
+function objToString(obj) {
+  return JSON.stringify(obj).replace(/"(\w+)":/g, '$1:')
+}
+
 module.exports = {
   trimNullOrUndefinedFromEnd,
   capitalize,
   getNodeBuilderName,
   isNode,
   isVariable,
+  objToString,
 }

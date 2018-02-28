@@ -10,10 +10,15 @@ body {
   font-family: monospace;
   height: 32px;
   line-height: 32px;
-  border-bottom: 1px solid #ddd;
   color: #454545;
   padding-left: 10px;
   font-size: 18px;
+}
+
+.title .github-link {
+  float: right;
+  font-size: 10px;
+  margin-right: 10px;
 }
 
 .code-container {
@@ -21,8 +26,26 @@ body {
   height: 100%;
 }
 
+.input {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.output {
+  flex: 1;
+  display: flex;
+}
+
 textarea {
   flex: 1;
+  border: 2px solid #ddd;
+  resize: none;
+  font-size: 0.9em;
+}
+
+.output textarea {
+  font-size: 0.8em;
 }
 
 textarea[readonly] {

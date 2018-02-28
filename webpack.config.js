@@ -1,3 +1,5 @@
+const DEV = process.env.NODE_ENV !== 'production'
+
 module.exports = {
   entry: './ui/index.js',
   output: {
@@ -11,11 +13,8 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
       },
-      { test: /\.json$/, loader: 'json-loader' },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
-      },
     ],
   },
+
+  mode: DEV ? 'development' : 'production',
 }

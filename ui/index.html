@@ -3,15 +3,21 @@
 <head>
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
   <div class="title">
     Codemod Generator
+    <a href="https://github.com/noahsug/gen-codemod" class="github-link">github.com/noahsug/gen-codemod</a>
   </div>
   <div class="code-container">
-    <textarea class="initial" placeholder="Initial JS"></textarea>
-    <textarea class="desired" placeholder="Desired JS"></textarea>
-    <textarea readonly class="transform" placeholder="Jscodeshift Transform"></textarea>
+    <div class="input">
+      <textarea class="initial" placeholder="Initial JS"></textarea>
+      <textarea class="desired" placeholder="Desired JS"></textarea>
+    </div>
+    <div class="output">
+      <textarea readonly class="transform" placeholder="Jscodeshift Transform"></textarea>
+    </div>
   </div>
 
   <script src="bundle.js"></script>

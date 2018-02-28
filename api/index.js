@@ -2,8 +2,7 @@ const getRootNode = require('./getRootNode')
 const getVariableGetterMap = require('./getVariableGetterMap')
 const getProperties = require('./getProperties')
 const getTransform = require('./getTransform')
-const prettify = require('./prettify')
-const { capitalize } = require('./utils')
+const { capitalize, objToString } = require('./utils')
 
 function generateCodemod(config) {
   const rootNodeIn = getRootNode(config.inputSrc)
@@ -14,7 +13,7 @@ function generateCodemod(config) {
   module.exports = function(file, api) {
     const j = api.jscodeshift
 
-    const rootProperties = ${JSON.stringify(getProperties(rootNodeIn))}
+    const rootProperties = ${objToString(getProperties(rootNodeIn))}
 
     function getTransform(path) {
       return ${getTransform(rootNodeOut, variableGetterMap)}
@@ -34,7 +33,7 @@ function generateCodemod(config) {
   }
   `
 
-  return prettify(src)
+  return config.prettify(src)
 }
 
 function mapEachVariable(variableGetterMap, fn) {
